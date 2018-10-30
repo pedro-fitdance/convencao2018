@@ -33,17 +33,21 @@ function handleSearch(event) {
 						"PESQUISAR";
 				} else {
 					document.getElementById("dialog").style.display = "flex";
+					document.getElementById("form__search__button").innerHTML =
+						"PESQUISAR";
 					document.getElementById("dialog__msg").innerHTML =
 						"O portador desse documento já fez checkin!";
 				}
 			} else {
 				document.getElementById("dialog").style.display = "flex";
+				document.getElementById("form__search__button").innerHTML = "PESQUISAR";
 				document.getElementById("dialog__msg").innerHTML =
 					"Não existe nenhum inscrito com esse documento!";
 			}
 		})
 		.catch((e) => {
 			document.getElementById("dialog").style.display = "flex";
+			document.getElementById("form__search__button").innerHTML = "PESQUISAR";
 			document.getElementById("dialog__msg").innerHTML =
 				"Algum erro aconteceu! Entre em contato com o suporte" + e;
 		});
@@ -73,6 +77,8 @@ function handleUpdate(event, id) {
 		})
 		.catch((e) => {
 			document.getElementById("dialog").style.display = "flex";
+			document.getElementById("form__checkin__button").innerHTML =
+				"Fazer checkin";
 			document.getElementById("dialog__msg").innerHTML =
 				"Algum erro aconteceu! Entre em contato com o suporte" + e;
 			document.getElementById("documentoForm").value = "";
@@ -125,6 +131,7 @@ function handleCreateNew() {
 			document.getElementById("documentoCreate").value = "";
 		})
 		.catch((e) => {
+			document.getElementById("button_criar").innerHTML = "Criar";
 			document.getElementById("dialog__cadastro__msg").innerHTML =
 				"Algum erro aconteceu! Entre em contato com o suporte" + e;
 		});
