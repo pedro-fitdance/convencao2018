@@ -1,5 +1,3 @@
-<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js" />;
-
 // Initialize Firebase
 var config = {
 	apiKey: "AIzaSyBg1sYn-VXAPYsauQFOA9g6Tp2IyZjW7pw",
@@ -28,11 +26,12 @@ function handleSearch(event) {
 					"documento",
 				).innerHTML = snapshot.val().documento;
 			} else {
-				console.log("n existe");
+				document.getElementById("dialog").style.display = "flex";
+				document.getElementById("dialog__msg") = "Não existe nenhum inscrito com esse documento!";
 			}
 		})
 		.catch((e) => {
-			console.log("algum erro aconteceu" + e);
+			console.log("Algum erro aconteceu! Contacte o suporte!" + e);
 		});
 }
 
