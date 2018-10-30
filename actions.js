@@ -42,7 +42,7 @@ function handleSearch(event) {
 		.catch((e) => {
 			document.getElementById("dialog").style.display = "flex";
 			document.getElementById("dialog__msg").innerHTML =
-				"O portador desse documento já fez checkin!" + e;
+				"Algum erro aconteceu! Entre em contato com o suporte" + e;
 		});
 }
 
@@ -52,7 +52,19 @@ function handleUpdate(event, id) {
 		.database()
 		.ref()
 		.child("/user/" + id)
-		.update({ checkin: "true" });
+		.update({ checkin: "true" })
+		.then(() => {
+			document.getElementById("dialog").style.display = "flex";
+			document.getElementById("dialog__msg").innerHTML =
+				"Checkin realizado com sucesso!";
+			document.getElementById("documentoForm").value = "";
+		})
+		.catch((e) => {
+			document.getElementById("dialog").style.display = "flex";
+			document.getElementById("dialog__msg").innerHTML =
+				"Algum erro aconteceu! Entre em contato com o suporte" + e;
+			document.getElementById("documentoForm").value = "";
+		});
 }
 
 function handleDialog() {
