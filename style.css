@@ -20,7 +20,8 @@ body * {
 }
 
 .container {
-	min-width: 445px;
+	width: 100%;
+	max-width: 445px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -269,14 +270,27 @@ body * {
 }
 
 .dialog__cadastro .dialog__cadastro__area form div {
-	width: 100%;
+	width: calc(50% - 30px);
 	margin: 0 0 15px 0;
+}
+
+.dialog__cadastro .dialog__cadastro__area form div:last-child {
+	width: 100%;
+}
+
+.dialog__cadastro .dialog__cadastro__area form div:last-child {
+	width: 100%;
 }
 
 .dialog__cadastro .dialog__cadastro__area form div label {
 	width: 100%;
 	display: block;
 	margin: 0 0 5px 0;
+}
+
+.dialog__cadastro .dialog__cadastro__area form input {
+	width: 100%;
+	padding: 5px;
 }
 
 .dialog__cadastro .dialog__cadastro__area button {

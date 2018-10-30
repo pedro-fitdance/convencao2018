@@ -81,6 +81,14 @@ function handleDialogCreate() {
 	document.getElementById("dialog__cadastro").style.display = "flex";
 }
 
+function handleDialogCadastro() {
+	document.getElementById("dialog__cadastro").style.display = "none";
+	document.getElementById("dialog__cadastro__msg").innerHTML = "";
+	document.getElementById("nomeCreate").innerHTML = "";
+	document.getElementById("documentoCreate").innerHTML = "";
+	document.getElementById("dialog__cadastro__fechar").style.display = "none";
+}
+
 function handleCreateNew() {
 	event.preventDefault();
 
@@ -93,6 +101,20 @@ function handleCreateNew() {
 		.set({
 			name: nomeCreate,
 			documento: documentoCreate,
+			checkin: "false",
 			newUser: "true",
+		})
+		.then(() => {
+			document.getElementById("dialog__cadastro__fechar").style.display =
+				"flex";
+			document.getElementById("dialog__cadastro__msg").innerHTML =
+				"Cadastro realizado com sucesso!";
+			document.getElementById("name").innerHTML = nomeCreate;
+			document.getElementById("checkin").innerHTML = "false";
+			document.getElementById("documento").innerHTML = documentoCreate;
+		})
+		.catch((e) => {
+			document.getElementById("dialog__cadastro__msg").innerHTML =
+				"Algum erro aconteceu! Entre em contato com o suporte" + e;
 		});
 }
