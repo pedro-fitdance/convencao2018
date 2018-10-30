@@ -112,7 +112,7 @@ function handleCreateNew() {
 			document.getElementById("checkin").innerHTML = "false";
 			document.getElementById("documento").innerHTML = documentoCreate;
 			document.getElementById("button_criar").innerHTML = "Criar";
-			document.getElementById("form__checkin").style.display = "flex";
+			document.getElementById("form__checkin__button").style.display = "flex";
 		})
 		.catch((e) => {
 			document.getElementById("dialog__cadastro__msg").innerHTML =
