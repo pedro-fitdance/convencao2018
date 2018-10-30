@@ -80,7 +80,7 @@ body * {
 }
 
 .form__search button {
-	width: 125px;
+	width: 200px;
 	margin: 15px auto 0 auto;
 	color: #8000c3;
 	background-color: #fff;
@@ -118,7 +118,7 @@ body * {
 
 .form__checkin button {
 	display: none;
-	width: 136px;
+	width: 200px;
 	margin: 15px auto 0 auto;
 	color: #8000c3;
 	background-color: #fff;
@@ -199,7 +199,7 @@ body * {
 }
 
 .dialog .dialog__area button {
-	width: 125px;
+	width: 200px;
 	background-color: #8000c3;
 	color: #fff;
 	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
@@ -293,7 +293,7 @@ body * {
 }
 
 .dialog__cadastro .dialog__cadastro__area button {
-	width: 125px;
+	width: 200px;
 	background-color: #8000c3;
 	color: #fff;
 	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
@@ -330,7 +330,7 @@ body * {
 }
 
 .button__create button {
-	width: 155px;
+	width: 200px;
 	margin: 15px auto 0 auto;
 	color: #8000c3;
 	background-color: #fff;
