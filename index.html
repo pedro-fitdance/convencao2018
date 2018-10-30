@@ -21,11 +21,11 @@
         <div class="forms">
             <div class="form__search">
                 <form onsubmit="handleSearch(event)">
-                    <input type="text" name="documentoForm" id="documentoForm" placeholder="Documento" />
+                    <input required type="text" name="documentoForm" id="documentoForm" placeholder="Documento" />
                     <button>PESQUISAR</button>
                 </form>
             </div>
-            <div class="form__checkin">
+            <div class="form__checkin" id="form__checkin">
                 <form onsubmit="handleUpdate(event, document.getElementById('documento').innerText)">
                     <button>fez checkin</button>
                 </form>
@@ -33,20 +33,22 @@
         </div>
         <div class="resultado">
             <div>
-                <strong>Nome:</strong><span id="name"></span>
+                <strong>Nome:</strong>&nbsp;<span id="name"></span>
             </div>
             <div>
-                <strong>Documento:</strong><span id="documento"></span>
+                <strong>Documento:</strong>&nbsp;<span id="documento"></span>
             </div>
             <div>
-                <strong>Checkin:</strong><span id="checkin"></span>
+                <strong>Checkin:</strong>&nbsp;<span id="checkin"></span>
             </div>
         </div>
     </div>
     <div class="dialog" id="dialog">
-        <strong>Atenção!</strong>
-        <span id="dialog__msg"></span>
-        <button>FECHAR</button>
+        <div class="dialog__area">
+            <strong>Atenção!</strong>
+            <span id="dialog__msg"></span>
+            <button onclick="handleDialog()">FECHAR</button>
+        </div>
     </div>
 </body>
 

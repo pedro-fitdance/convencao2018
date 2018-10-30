@@ -20,18 +20,25 @@ function handleSearch(event) {
 		.once("value")
 		.then((snapshot) => {
 			if (snapshot.val()) {
-				document.getElementById("name").innerHTML = snapshot.val().name;
-				document.getElementById("checkin").innerHTML = snapshot.val().checkin;
-				document.getElementById(
-					"documento",
-				).innerHTML = snapshot.val().documento;
+				if (snapshot.val().checkin === "false"){
+					document.getElementById("name").innerHTML = snapshot.val().name;
+					document.getElementById("checkin").innerHTML = snapshot.val().checkin;
+					document.getElementById(
+						"documento",
+					).innerHTML = snapshot.val().documento;
+					document.getElementById("form__checkin").style.display = "flex";
+				}else{
+					document.getElementById("dialog").style.display = "flex";
+					document.getElementById("dialog__msg") = "O portador desse documento já fez checkin!";
+				}
 			} else {
 				document.getElementById("dialog").style.display = "flex";
 				document.getElementById("dialog__msg") = "Não existe nenhum inscrito com esse documento!";
 			}
 		})
 		.catch((e) => {
-			console.log("Algum erro aconteceu! Contacte o suporte!" + e);
+			document.getElementById("dialog").style.display = "flex";
+			document.getElementById("dialog__msg") = "O portador desse documento já fez checkin!" + e;
 		});
 }
 
@@ -43,3 +50,8 @@ function handleUpdate(event, id) {
 		.child("/user/" + id)
 		.update({ checkin: "true" });
 }
+
+function handleDialog(){
+	document.getElementById("dialog").style.display = "none";
+	document.getElementById("documentoForm").value = "";
+};
