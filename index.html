@@ -18,18 +18,11 @@
             <img src="./imagens/logo.svg" />
         </div>
         <div class="titulo">Convenção 2018</div>
-        <div class="forms">
-            <div class="form__search">
-                <form onsubmit="handleSearch(event)">
-                    <input required type="text" name="documentoForm" id="documentoForm" placeholder="Documento" />
-                    <button>PESQUISAR</button>
-                </form>
-            </div>
-            <div class="form__checkin" id="form__checkin">
-                <form onsubmit="handleUpdate(event, document.getElementById('documento').innerText)">
-                    <button>fez checkin</button>
-                </form>
-            </div>
+        <div class="form__search">
+            <form onsubmit="handleSearch(event)">
+                <input required type="text" name="documentoForm" id="documentoForm" placeholder="Documento" />
+                <button>PESQUISAR</button>
+            </form>
         </div>
         <div class="resultado">
             <div>
@@ -41,6 +34,11 @@
             <div>
                 <strong>Checkin:</strong>&nbsp;<span id="checkin"></span>
             </div>
+        </div>
+        <div class="form__checkin" id="form__checkin">
+            <form onsubmit="handleUpdate(event, document.getElementById('documento').innerText)">
+                <button id="form__checkin__button">Fazer checkin</button>
+            </form>
         </div>
     </div>
     <div class="dialog" id="dialog">
