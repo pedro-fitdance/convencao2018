@@ -78,7 +78,7 @@ function handleDialog() {
 }
 
 function handleDialogCreate() {
-	document.getElementById("dialog__cadastro").style.display = "none";
+	document.getElementById("dialog__cadastro").style.display = "flex";
 }
 
 function handleCreateNew() {
