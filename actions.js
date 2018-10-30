@@ -58,6 +58,10 @@ function handleUpdate(event, id) {
 			document.getElementById("dialog__msg").innerHTML =
 				"Checkin realizado com sucesso!";
 			document.getElementById("documentoForm").value = "";
+			document.getElementById("name").innerHTML = "";
+			document.getElementById("checkin").innerHTML = "";
+			document.getElementById("documento").innerHTML = "";
+			document.getElementById("form__checkin__button").style.display = "none";
 		})
 		.catch((e) => {
 			document.getElementById("dialog").style.display = "flex";
