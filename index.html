@@ -5,11 +5,17 @@
     <title>FitDance Convention 2018</title>
     <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
     <script src="./actions.js"></script>
+    <!-- <script src="http://labelwriter.com/software/dls/sdk/js/DYMO.Label.Framework.latest.js" type="text/javascript"
+        charset="UTF-8"></script>
+    <script src="http://www.labelwriter.com/software/dls/sdk/samples/js/PrintLabel/PrintLabel.js" type="text/javascript"
+        charset="UTF-8"></script>
+    <script src="./print.js"></script> -->
     <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
     </style>
     <link type="text/css" rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./imagens/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.5">
 </head>
 
 <body>
@@ -23,6 +29,9 @@
                 <input required type="text" name="documentoForm" id="documentoForm" placeholder="Documento" />
                 <button>PESQUISAR</button>
             </form>
+        </div>
+        <div>
+            <button onclick="handleDialogCreate()">Cadastrar novo</button>
         </div>
         <div class="resultado">
             <div>
@@ -47,6 +56,24 @@
             <span id="dialog__msg"></span>
             <button onclick="handleDialog()">FECHAR</button>
         </div>
+    </div>
+    <div class="dialog__cadastro">
+        <div class="dialog__cadastro__area">
+            <div class="dialog__cadastro__titulo"><strong>Novo cadastro</strong></div>
+            <form onsubmit="handleCreateNew()">
+                <div>
+                    <label>Nome</label>
+                    <input name="nomeCreate" id="nomeCreate" type="text">
+                </div>
+                <div>
+                    <label>Documento</label>
+                    <input name="documentoCreate" id="documentoCreate" type="text">
+                </div>
+                <div><button>Criar</button></div>
+            </form>
+            <div class="dialog__cadastro__msg" id="dialog__cadastro__msg"></div>
+        </div>
+
     </div>
 </body>
 

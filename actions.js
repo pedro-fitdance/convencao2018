@@ -76,3 +76,23 @@ function handleDialog() {
 	document.getElementById("dialog__msg").innerHTML = "";
 	document.getElementById("documentoForm").value = "";
 }
+
+function handleDialogCreate() {
+	document.getElementById("dialog__cadastro").style.display = "none";
+}
+
+function handleCreateNew() {
+	event.preventDefault();
+
+	var nomeCreate = document.getElementById("nomeCreate").value;
+	var documentoCreate = document.getElementById("documentoCreate").value;
+
+	firebase
+		.database()
+		.ref("user/" + documentoCreate)
+		.set({
+			name: nomeCreate,
+			documento: documentoCreate,
+			newUser: "true",
+		});
+}
