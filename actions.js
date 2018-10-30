@@ -113,8 +113,8 @@ function handleCreateNew() {
 			document.getElementById("documento").innerHTML = documentoCreate;
 			document.getElementById("button_criar").innerHTML = "Criar";
 			document.getElementById("form__checkin__button").style.display = "flex";
-			document.getElementById("nomeCreate").innerHTML = "";
-			document.getElementById("documentoCreate").innerHTML = "";
+			document.getElementById("nomeCreate").value = "";
+			document.getElementById("documentoCreate").value = "";
 		})
 		.catch((e) => {
 			document.getElementById("dialog__cadastro__msg").innerHTML =
