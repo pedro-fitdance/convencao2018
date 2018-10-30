@@ -267,19 +267,17 @@ body * {
 .dialog__cadastro .dialog__cadastro__area form {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .dialog__cadastro .dialog__cadastro__area form div {
-	width: calc(50% - 30px);
+	width: calc(50% - 15px);
 	margin: 0 0 15px 0;
 }
 
 .dialog__cadastro .dialog__cadastro__area form div:last-child {
 	width: 100%;
-}
-
-.dialog__cadastro .dialog__cadastro__area form div:last-child {
-	width: 100%;
+	text-align: center;
 }
 
 .dialog__cadastro .dialog__cadastro__area form div label {
@@ -323,6 +321,10 @@ body * {
 	text-decoration: none;
 	-webkit-appearance: none;
 	-webkit-tap-highlight-color: transparent;
+}
+
+.dialog__cadastro .dialog__cadastro__msg {
+	margin: 0 0 15px 0;
 }
 
 .button__create button {

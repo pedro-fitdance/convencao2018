@@ -95,6 +95,8 @@ function handleCreateNew() {
 	var nomeCreate = document.getElementById("nomeCreate").value;
 	var documentoCreate = document.getElementById("documentoCreate").value;
 
+	document.getElementById("button_criar").innerHTML = "Criando...";
+
 	firebase
 		.database()
 		.ref("user/" + documentoCreate)
@@ -108,10 +110,11 @@ function handleCreateNew() {
 			document.getElementById("dialog__cadastro__fechar").style.display =
 				"flex";
 			document.getElementById("dialog__cadastro__msg").innerHTML =
-				"Cadastro realizado com sucesso!";
+				"Cadastro realizado com sucesso! \n Confirme o checkin!";
 			document.getElementById("name").innerHTML = nomeCreate;
 			document.getElementById("checkin").innerHTML = "false";
 			document.getElementById("documento").innerHTML = documentoCreate;
+			document.getElementById("button_criar").innerHTML = "Criar";
 		})
 		.catch((e) => {
 			document.getElementById("dialog__cadastro__msg").innerHTML =
