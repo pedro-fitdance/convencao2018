@@ -13,6 +13,7 @@ var database = firebase.database();
 function handleSearch(event) {
 	event.preventDefault();
 
+	document.getElementById("form__search__button").innerHTML = "PESQUISANDO...";
 	var documento = document.getElementById("documentoForm").value;
 	return firebase
 		.database()
@@ -28,6 +29,8 @@ function handleSearch(event) {
 					).innerHTML = snapshot.val().documento;
 					document.getElementById("form__checkin__button").style.display =
 						"flex";
+					document.getElementById("form__search__button").innerHTML =
+						"PESQUISAR";
 				} else {
 					document.getElementById("dialog").style.display = "flex";
 					document.getElementById("dialog__msg").innerHTML =
@@ -48,6 +51,9 @@ function handleSearch(event) {
 
 function handleUpdate(event, id) {
 	event.preventDefault();
+
+	document.getElementById("form__checkin__button").innerHTML =
+		"Fazendo checkin...";
 	return firebase
 		.database()
 		.ref()
@@ -57,6 +63,8 @@ function handleUpdate(event, id) {
 			document.getElementById("dialog").style.display = "flex";
 			document.getElementById("dialog__msg").innerHTML =
 				"Checkin realizado com sucesso!";
+			document.getElementById("form__checkin__button").innerHTML =
+				"Fazer checkin";
 			document.getElementById("documentoForm").value = "";
 			document.getElementById("name").innerHTML = "";
 			document.getElementById("checkin").innerHTML = "";
