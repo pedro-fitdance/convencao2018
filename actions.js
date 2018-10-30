@@ -86,7 +86,6 @@ function handleDialogCadastro() {
 	document.getElementById("dialog__cadastro__msg").innerHTML = "";
 	document.getElementById("nomeCreate").innerHTML = "";
 	document.getElementById("documentoCreate").innerHTML = "";
-	document.getElementById("dialog__cadastro__fechar").style.display = "none";
 }
 
 function handleCreateNew() {
@@ -107,8 +106,6 @@ function handleCreateNew() {
 			newUser: "true",
 		})
 		.then(() => {
-			document.getElementById("dialog__cadastro__fechar").style.display =
-				"flex";
 			document.getElementById("dialog__cadastro__msg").innerHTML =
 				"Cadastro realizado com sucesso! \n Confirme o checkin!";
 			document.getElementById("name").innerHTML = nomeCreate;
