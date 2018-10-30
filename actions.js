@@ -107,12 +107,14 @@ function handleCreateNew() {
 		})
 		.then(() => {
 			document.getElementById("dialog__cadastro__msg").innerHTML =
-				"Cadastro realizado com sucesso! \n Confirme o checkin!";
+				"Cadastro realizado com sucesso! <br /> Confirme o checkin!";
 			document.getElementById("name").innerHTML = nomeCreate;
 			document.getElementById("checkin").innerHTML = "false";
 			document.getElementById("documento").innerHTML = documentoCreate;
 			document.getElementById("button_criar").innerHTML = "Criar";
 			document.getElementById("form__checkin__button").style.display = "flex";
+			document.getElementById("nomeCreate").innerHTML = "";
+			document.getElementById("documentoCreate").innerHTML = "";
 		})
 		.catch((e) => {
 			document.getElementById("dialog__cadastro__msg").innerHTML =
